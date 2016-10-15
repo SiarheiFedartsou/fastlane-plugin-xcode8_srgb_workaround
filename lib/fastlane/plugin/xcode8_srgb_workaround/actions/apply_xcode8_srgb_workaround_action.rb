@@ -2,7 +2,7 @@ module Fastlane
   module Actions
     class ApplyXcode8SrgbWorkaroundAction < Action
       def self.run(params)
-        for subdirectory in params[:include_subdirectories]
+        for subdirectory in params[:subdirectories]
           pattern = File.expand_path(subdirectory) + '/*.png'
           for png in Dir[pattern]
             `sips -m '/System/Library/Colorsync/Profiles/sRGB Profile.icc' '#{png}' --out '#{png}'`
@@ -21,8 +21,8 @@ module Fastlane
       def self.available_options
         [
 
-          FastlaneCore::ConfigItem.new(key: :include_subdirectories,
-                                description: "A description of your option",
+          FastlaneCore::ConfigItem.new(key: :subdirectories,
+                                description: "List of subdirectories where PNGs must be detected and converted to sRGB",
                                 default_value: ['./**'],
                                       type: Array)                         
         ]
