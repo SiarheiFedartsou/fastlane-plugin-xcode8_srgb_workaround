@@ -2,15 +2,14 @@ module Fastlane
   module Actions
     class ApplyXcode8SrgbWorkaroundAction < Action
       def self.run(params)
-        params[:subdirectories].each { |subdirectory|
-          ['png', 'jpg', 'jpeg'].each { |fmt|
+        params[:subdirectories].each do |subdirectory|
+          ['png', 'jpg', 'jpeg'].each do |fmt|
             pattern = File.expand_path(subdirectory) + "/*.#{fmt}"
-            Dir[pattern].each { |resource_path|
-                `sips -m '/System/Library/Colorsync/Profiles/sRGB Profile.icc' '#{resource_path}' --out '#{resource_path}'`
-            }
-          }
-
-        }
+            Dir[pattern].each do |resource_path|
+              `sips -m '/System/Library/Colorsync/Profiles/sRGB Profile.icc' '#{resource_path}' --out '#{resource_path}'`
+            end
+          end
+        end
       end
 
       def self.description
