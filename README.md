@@ -12,27 +12,18 @@ fastlane add_plugin xcode8_srgb_workaround
 
 ## About xcode8_srgb_workaround
 
-Converts PNGs in your project to sRGB format to avoid problems described here(actual for deployment target <9.3)
+Converts PNGs in your project to sRGB format to avoid crashes when building with Xcode 8 for iOS 8 and earlier deployment target. Problem described in more detail [here](http://stackoverflow.com/questions/39404285/xcode-8-build-crash-on-ios-9-2-and-below) and [here](https://forums.developer.apple.com/thread/61643)
 
-**Note to author:** Add a more detailed description about this plugin here. If your plugin contains multiple actions, make sure to mention them here.
+Note: if you don't support iOS 8 and earlier you likely don't need this plugin.
 
-## Example
+## Usage example
 
-Check out the [example `Fastfile`](fastlane/Fastfile) to see how to use this plugin. Try it by cloning the repo, running `fastlane install_plugins` and `bundle exec fastlane test`. 
-
-**Note to author:** Please set up a sample project to make it easy for users to explore what your plugin does. Provide everything that is necessary to try out the plugin in this project (including a sample Xcode/Android project if necessary)
-
-## Run tests for this plugin
-
-To run both the tests, and code style validation, run
-
+```ruby
+apply_xcode8_srgb_workaround(subdirectories: ['Resources/**', 'Assets/**'])
 ```
-rake
-```
-
-To automatically fix many of the styling issues, use 
-```
-rubocop -a
+or just
+```ruby
+apply_xcode8_srgb_workaround # will find PNGs recursively in your root directory
 ```
 
 ## Issues and Feedback
