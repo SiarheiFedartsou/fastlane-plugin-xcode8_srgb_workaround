@@ -12,7 +12,7 @@ fastlane add_plugin xcode8_srgb_workaround
 
 ## About xcode8_srgb_workaround
 
-Converts PNGs and JPEGs in your project to sRGB format to avoid crashes when building with Xcode 8 for iOS 8 and earlier deployment target. Problem described in more detail [here](http://stackoverflow.com/questions/39404285/xcode-8-build-crash-on-ios-9-2-and-below) and [here](https://forums.developer.apple.com/thread/61643)
+Converts PNGs and JPEGs in your project to sRGB format to avoid crashes when building with Xcode 8 for iOS 8 and earlier deployment target. Problem described in more detail [here](http://stackoverflow.com/questions/39404285/xcode-8-build-crash-on-ios-9-2-and-below) and [here](https://forums.developer.apple.com/thread/61643).
 
 Note: if you don't support iOS 8 and earlier you likely don't need this plugin.
 
