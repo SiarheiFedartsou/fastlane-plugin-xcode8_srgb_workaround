@@ -23,7 +23,7 @@ apply_xcode8_srgb_workaround(subdirectories: ['Resources/**', 'Assets/**'])
 ```
 or just
 ```ruby
-apply_xcode8_srgb_workaround # will find PNGs recursively in your root directory
+apply_xcode8_srgb_workaround # will find resources recursively in your root directory
 ```
 
 ## Issues and Feedback
