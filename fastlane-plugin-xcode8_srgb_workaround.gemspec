@@ -7,10 +7,10 @@ Gem::Specification.new do |spec|
   spec.name          = 'fastlane-plugin-xcode8_srgb_workaround'
   spec.version       = Fastlane::Xcode8SrgbWorkaround::VERSION
   spec.author        = %q{Siarhei Fiedartsou}
-  spec.email         = %q{Sergei_Fedortsov@cedoni.com}
+  spec.email         = %q{siarhei.fedartsou@gmail.com}
 
-  spec.summary       = %q{Converts PNGs in your project to sRGB format to avoid problems described here(actual for deployment target <9.3)}
-  # spec.homepage      = "https://github.com/<GITHUB_USERNAME>/fastlane-plugin-xcode8_srgb_workaround"
+  spec.summary       = %q{Converts PNGs and JPEGs in your project to sRGB format to avoid crashes when building with Xcode 8 for iOS 8 and earlier deployment target}
+  spec.homepage      = "https://github.com/SiarheiFiedartsou/fastlane-plugin-xcode8_srgb_workaround"
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)
